@@ -2,7 +2,7 @@
 import sqlite3
 
 #conexão com o arquivo que tem o mesmo nome criado no BD
-conexao = sqlite3.connect('banco')
+conexao = sqlite3.connect('bancodedados')
 
 #passando a conexão para uma nova variável
 cursor = conexao.cursor()
