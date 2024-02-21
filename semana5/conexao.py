@@ -37,9 +37,12 @@ cursor = conexao.cursor()
 #Visualizar informações com SELECT
 dados = cursor.execute('SELECT * FROM usuario') #pode ser colocado o que quer 
 
-dados = cursor.execute('SELECT nome,telefone FROM usuario WHERE id>2')
+#dados = cursor.execute('SELECT nome,telefone FROM usuario WHERE id>2')
 for usuario in dados:
     print(usuario)
+
+#Alterando os dados
+cursor.execute('UPDATE usuario SET endereco ="China" WHERE NOME ="Kao"')
 
 #indicando que serão enviadas novas informações
 conexao.commit()
