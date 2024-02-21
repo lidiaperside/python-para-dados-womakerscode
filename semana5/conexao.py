@@ -26,10 +26,21 @@ cursor = conexao.cursor()
 #cursor.execute('DROP TABLE produtos')
 
 #Inserindo dados
-cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (1, 'Lidia', 'Sapé', 'lidia@lidia.com', 123)")
-cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (2, 'Patricia', 'Sapé', 'patricia@patricia.com', 234)")
-cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (3, 'Kao', 'Sapé', 'kao@kao.com', 345)")
-cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (4, 'Jose Maria', 'João Pessoa', 'jose@maria.com', 456)")
+#cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (1, 'Lidia', 'Sapé', 'lidia@lidia.com', 123)")
+#cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (2, 'Patricia', 'Sapé', 'patricia@patricia.com', 234)")
+#cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (3, 'Kao', 'Sapé', 'kao@kao.com', 345)")
+#cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (4, 'Jose Maria', 'João Pessoa', 'jose@maria.com', 456)")
+
+#Deletando item
+#gitcursor.execute('DELETE FROM usuario where id=1')
+
+#Visualizar informações com SELECT
+dados = cursor.execute('SELECT * FROM usuario') #pode ser colocado o que quer 
+
+dados = cursor.execute('SELECT nome,telefone FROM usuario WHERE id>2')
+for usuario in dados:
+    print(usuario)
+
 #indicando que serão enviadas novas informações
 conexao.commit()
 
