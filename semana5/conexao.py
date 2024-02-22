@@ -71,6 +71,8 @@ cursor = conexao.cursor()
 #FULL JOIN -> pega todas as linhas de todas as tabelas, se nao tiver relação retorna none 
 #dados = cursor.execute('SELECT * FROM usuario FULL JOIN gerente ON usuario.id = gerente.id')
 
+#Subconsultas -> consultas sql alinhadas com a consulta principal
+dados = cursor.execute('SELECT * FROM usuario WHERE nome IN (SELECT nome FROM gerente)') #selecionar dados de usuarios onde o nome de usuario tbm esteja em gerente
 
 
 for usuario in dados:
