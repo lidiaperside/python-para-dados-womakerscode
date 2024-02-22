@@ -84,4 +84,4 @@ for usuario in dados:
 conexao.commit()
 
 #finaliza para não gerar conflitos
-#conexao.close
+conexao.close
