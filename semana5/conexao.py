@@ -21,6 +21,7 @@ cursor = conexao.cursor()
 
 #Criando uma nova tabela
 #cursor.execute('CREATE TABLE produtos(id INT, nome VARCHAR(100), endereco VARCHAR(100), email VARCHAR(100));')
+#cursor.execute('CREATE TABLE gerentes(id INT, nome VARCHAR(100), endereco VARCHAR(100), email VARCHAR(100));')
 
 #Deletando uma tabela
 #cursor.execute('DROP TABLE produtos')
@@ -30,6 +31,12 @@ cursor = conexao.cursor()
 #cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (2, 'Patricia', 'Sapé', 'patricia@patricia.com', 234)")
 #cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (3, 'Kao', 'Sapé', 'kao@kao.com', 345)")
 #cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (4, 'Jose Maria', 'João Pessoa', 'jose@maria.com', 456)")
+#cursor.execute("INSERT INTO usuario(id,nome,endereco,email,telefone) VALUES (6, 'Ingrid', 'Limeira', 'ingrid@ingrid.com', 678)")
+#cursor.execute("INSERT INTO usuario(id,nome,endereco,email, telefone) VALUES (5, 'Augusto', 'Uberlância', 'augusto@augusto.com', 567)")
+
+
+#cursor.execute("INSERT INTO gerente(id,nome,endereco,email) VALUES (4, 'Jose Maria', 'João Pessoa', 'jose@maria.com')")
+#cursor.execute("INSERT INTO gerente(id,nome,endereco,email) VALUES (5, 'Augusto', 'Uberlância', 'augusto@augusto.com')")
 
 #Deletando item
 #gitcursor.execute('DELETE FROM usuario where id=1')
@@ -52,7 +59,20 @@ cursor = conexao.cursor()
 
 #GROUP BY e HAVING
 #dados = cursor.execute('SELECT id,nome FROM usuario GROUP BY nome') #agrupar por id e nome de acordo com o nome
-dados = cursor.execute('SELECT id,nome FROM usuario GROUP BY nome HAVING id>3') #NO group by o WHERE so funciona antes da agragação, depois, precisa usar o HAVING
+#dados = cursor.execute('SELECT id,nome FROM usuario GROUP BY nome HAVING id>3') #NO group by o WHERE so funciona antes da agragação, depois, precisa usar o HAVING
+
+#JOIN's -> infotmações compiladas entre duas ou mais tabelas
+#INNER JOIN -> pega todas as linhas com correlação em todas as tabelas
+#dados = cursor.execute('SELECT * FROM usuario INNER JOIN gerente ON usuario.id = gerente.id')
+#LEFT JOIN -> pega todas as linhas com correlação em todas as tabelas e mostra a relação da esquerda para a direita, caso nao haja, retorna nulo
+#dados = cursor.execute('SELECT * FROM usuario LEFT JOIN gerente ON usuario.id = gerente.id')
+#RIGHT JOIN -> pega todas as linhas com correlação em todas as tabelas e mostra a relação da direita para a esquerda, caso nao haja, retorna nulo
+#dados = cursor.execute('SELECT * FROM usuario RIGHT JOIN gerente ON usuario.id = gerente.id')
+#FULL JOIN -> pega todas as linhas de todas as tabelas, se nao tiver relação retorna none 
+#dados = cursor.execute('SELECT * FROM usuario FULL JOIN gerente ON usuario.id = gerente.id')
+
+
+
 for usuario in dados:
     print(usuario)
 
