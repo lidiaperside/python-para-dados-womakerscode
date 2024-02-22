@@ -34,15 +34,21 @@ cursor = conexao.cursor()
 #Deletando item
 #gitcursor.execute('DELETE FROM usuario where id=1')
 
+#Alterando os dados
+#cursor.execute('UPDATE usuario SET endereco ="China" WHERE NOME ="Kao"')
+
 #Visualizar informações com SELECT
-dados = cursor.execute('SELECT * FROM usuario') #pode ser colocado o que quer 
+#dados = cursor.execute('SELECT * FROM usuario') #pode ser colocado o que quer 
+
+#dados = cursor.execute('SELECT * FROM usuario ORDER BY nome') #ordenando os dados
+
+dados = cursor.execute('SELECT * FROM usuario ORDER BY nome DESC') #ordenando os dados de forma decrescente
 
 #dados = cursor.execute('SELECT nome,telefone FROM usuario WHERE id>2')
 for usuario in dados:
     print(usuario)
 
-#Alterando os dados
-cursor.execute('UPDATE usuario SET endereco ="China" WHERE NOME ="Kao"')
+
 
 #indicando que serão enviadas novas informações
 conexao.commit()
