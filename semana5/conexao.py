@@ -48,8 +48,11 @@ cursor = conexao.cursor()
 
 #LIMIT e DISTINCT
 #dados = cursor.execute('SELECT * FROM usuario LIMIT 3') #limitando ate onde pode ser visto
-dados = cursor.execute('SELECT DISTINCT * FROM usuario') #retorna apenas valores que nao tem repetições, pode ser usado junto com o LIMIT
+#dados = cursor.execute('SELECT DISTINCT * FROM usuario') #retorna apenas valores que nao tem repetições, pode ser usado junto com o LIMIT
 
+#GROUP BY e HAVING
+#dados = cursor.execute('SELECT id,nome FROM usuario GROUP BY nome') #agrupar por id e nome de acordo com o nome
+dados = cursor.execute('SELECT id,nome FROM usuario GROUP BY nome HAVING id>3') #NO group by o WHERE so funciona antes da agragação, depois, precisa usar o HAVING
 for usuario in dados:
     print(usuario)
 
