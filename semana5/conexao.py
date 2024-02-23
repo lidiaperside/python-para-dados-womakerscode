@@ -39,7 +39,7 @@ cursor = conexao.cursor()
 #cursor.execute("INSERT INTO gerente(id,nome,endereco,email) VALUES (5, 'Augusto', 'Uberlância', 'augusto@augusto.com')")
 
 #Deletando item
-#gitcursor.execute('DELETE FROM usuario where id=1')
+#cursor.execute('DELETE FROM usuario where id=1')
 
 #Alterando os dados
 #cursor.execute('UPDATE usuario SET endereco ="China" WHERE NOME ="Kao"')
